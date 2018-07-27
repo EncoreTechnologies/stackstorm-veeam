@@ -1,0 +1,10 @@
+---
+ref: veeam
+name: veeam
+description: StackStorm integration pack for Veeam
+keywords: 
+    - veeam
+    - backups
+version: 0.1.0
+author: Encore Technologies
+email: code@encore.tech

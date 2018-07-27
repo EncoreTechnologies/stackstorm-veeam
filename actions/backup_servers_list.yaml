@@ -1,13 +1,11 @@
 ---
 description: "List all backup serversx"
 enabled: true
-entry_point: lib/actions.py
+entry_point: backup_servers_list.py
 name: backup_servers_list
 pack: encore
 runner_type: "python-script"
 parameters:
-  endpoint:
-    default: "/backupServers"
   password:
     type: string
     description: "The password to log into the Jumpbox or AD DC"

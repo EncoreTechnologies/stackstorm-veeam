@@ -1,0 +1,31 @@
+---
+description: "Get a backup serversx"
+enabled: true
+entry_point: backup_servers_get.py
+name: backup_servers_get
+pack: veeam
+runner_type: "python-script"
+parameters:
+  id:
+    type: string
+    description: "The ID of the backup server"
+    required: true
+  password:
+    type: string
+    description: "The password to log into the Jumpbox or AD DC"
+    secret: true
+  port:
+    type: integer
+    description: "Port to connect to Veeam on"
+  scheme:
+    type: string
+    description: "Scheme/transport to use for connection (http, https)"
+  server:
+    type: string
+    description: "Hostname / IP address of the veeam server"
+  ssl_verify:
+    type: boolean
+    description: "Should SSL host certificate be certified"
+  username:
+    type: string
+    description: "The username to log into the Jumpbox or AD DC"

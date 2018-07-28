@@ -24,7 +24,7 @@ class BaseAction(Action):
             if value is None:
                 raise ValueError("Error option needs to be specified as a"
                                  " parameter or config option: {}".format(opt))
-            else;
+            else:
                 kwargs[opt] = self.config.get(opt)
         return kwargs
 

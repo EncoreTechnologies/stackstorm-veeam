@@ -23,7 +23,7 @@ class BaseAction(Action):
         self.post("/sessionMngr/?v=latest")
         return self.session
 
-    def request(self, methood, endpoint, payload=None):
+    def request(self, method, endpoint, payload=None):
         response = self.session.request(method,
                                         "{}{}".format(self.base_url, endpoint),
                                         json=payload)

@@ -17,7 +17,7 @@ class BaseAction(Action):
 
     def resolve_config_options(self, **kwargs):
         for opt in CONFIG_OPTIONS:
-            if kwargs.get(value):
+            if kwargs.get(opt):
                 continue
 
             if self.config.get(opt):

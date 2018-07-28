@@ -13,19 +13,15 @@ parameters:
   port:
     type: integer
     description: "Port to connect to Veeam on"
-    default: 9399
   scheme:
     type: string
     description: "Scheme/transport to use for connection (http, https)"
-    default: "https"
   server:
     type: string
     description: "Hostname / IP address of the veeam server"
-    default: "https"
   ssl_verify:
     type: boolean
     description: "Should SSL host certificate be certified"
-    default: true
   username:
     type: string
     description: "The username to log into the Jumpbox or AD DC"

@@ -3,21 +3,36 @@ from st2common.runners.base_action import Action
 import requests
 import xmltodict
 
+CONFIG_OPTIONS = [
+    'scheme',
+    'server',
+    'ssl_verify',
+    'port',
+    'username',
+    'password',
+]
+
 
 class BaseAction(Action):
 
+    def resolve_config_options(self, **kwargs):
+        for opt in CONFIG_OPTIONS:
+            if kwargs.get(value):
+                continue
+
+            if self.config.get(opt):
+                kwargs[opt] = self.config.get(opt)
+            else:
+                raise ValueError("Error option needs to be specified as an"
+        return kwargs
+
     def login(self, **kwargs):
+        kwargs = self.resolve_config_options(**kwargs)
         self.base_url = "{}://{}:{}/api".format(kwargs['scheme'],
                                                 kwargs['server'],
                                                 kwargs['port'])
         self.session = requests.Session()
-        username = kwargs.get('username')
-        if not username:
-            username = self.config['username']
-        password = kwargs.get('password')
-        if not password:
-            password = self.config['password']
-        self.session.auth = (username, password)
+        self.session.auth = (kwargs['username'], kwargs['password'])
         self.session.verify = kwargs['ssl_verify']
 
         self.post("/sessionMngr/?v=latest")

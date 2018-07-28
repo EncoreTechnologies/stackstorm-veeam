@@ -1,3 +1,7 @@
 ---
 username: veeam@domain.tld
 password: Secret
+scheme: https
+server: veeamenterprise.domain.tld
+port: 9399
+ssl_verify: true

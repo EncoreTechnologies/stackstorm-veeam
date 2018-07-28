@@ -11,7 +11,13 @@ class BaseAction(Action):
                                                 kwargs['server'],
                                                 kwargs['port'])
         self.session = requests.Session()
-        self.session.auth = (kwargs['username'], kwargs['password'])
+        username =  kwargs.get('username'):
+        if not username:
+            username = self.config['username']
+        password =  kwargs.get('password'):
+        if not password:
+            password = self.config['password']
+        self.session.auth = (username, password)
         self.session.verify = kwargs['ssl_verify']
 
         self.post("/sessionMngr/?v=latest")

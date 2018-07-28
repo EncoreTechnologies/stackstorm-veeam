@@ -1,1 +1,8 @@
 ---
+username:
+  type: string
+  description: "username to use"
+password:
+  type: string
+  description: "username to use"
+  secret: true

@@ -9,7 +9,6 @@ parameters:
   password:
     type: string
     description: "The password to log into the Jumpbox or AD DC"
-    required: true
     secret: true
   port:
     type: integer
@@ -30,4 +29,3 @@ parameters:
   username:
     type: string
     description: "The username to log into the Jumpbox or AD DC"
-    required: true

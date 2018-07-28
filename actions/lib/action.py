@@ -20,11 +20,12 @@ class BaseAction(Action):
             if kwargs.get(opt):
                 continue
 
-            if self.config.get(opt):
-                kwargs[opt] = self.config.get(opt)
-            else:
+            value = self.config.get(opt)
+            if value is None:
                 raise ValueError("Error option needs to be specified as a"
                                  " parameter or config option: {}".format(opt))
+            else;
+                kwargs[opt] = self.config.get(opt)
         return kwargs
 
     def login(self, **kwargs):

@@ -3,7 +3,7 @@ description: "List all backup serversx"
 enabled: true
 entry_point: backup_servers_list.py
 name: backup_servers_list
-pack: encore
+pack: veeam
 runner_type: "python-script"
 parameters:
   password:

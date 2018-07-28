@@ -23,7 +23,8 @@ class BaseAction(Action):
             if self.config.get(opt):
                 kwargs[opt] = self.config.get(opt)
             else:
-                raise ValueError("Error option needs to be specified as an"
+                raise ValueError("Error option needs to be specified as a"
+                                 " parameter or config option: {}".format(opt))
         return kwargs
 
     def login(self, **kwargs):

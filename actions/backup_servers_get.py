@@ -5,4 +5,4 @@ class BackupServersGet(BaseAction):
 
     def run(self, **kwargs):
         self.login(**kwargs)
-        return self.get("/backupServers/{}".format(kwargs['id'])
+        return self.get("/backupServers/{}".format(kwargs['id']))

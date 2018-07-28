@@ -11,10 +11,10 @@ class BaseAction(Action):
                                                 kwargs['server'],
                                                 kwargs['port'])
         self.session = requests.Session()
-        username =  kwargs.get('username'):
+        username = kwargs.get('username')
         if not username:
             username = self.config['username']
-        password =  kwargs.get('password'):
+        password = kwargs.get('password')
         if not password:
             password = self.config['password']
         self.session.auth = (username, password)
